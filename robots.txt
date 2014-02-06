@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://gotealeaf.github.io/resources/sitemap.xml 
