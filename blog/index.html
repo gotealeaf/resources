@@ -7,7 +7,7 @@
 
 	<meta name="author" content="Tealeaf Academy">
 
-<meta name="description" content=" "> <meta name="keywords" content="">
+<meta name="description" content="(Updated Feb 4 2014) Step 1. Upgrade Your System to OS X Mavericks If you have a not-so-ancient Mac model (generally, 2008 or newer), you should &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -47,6 +47,218 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/resources/blog/2014/02/06/install-ruby-on-rails-for-hackers/">
+			
+				Install Ruby on Rails for Hackers</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-06T10:17:11-05:00" pubdate data-updated="true">Feb 6<span>th</span>, 2014</time></div>
+	</header>
+	<div class="entry-content">
+		<p>(Updated Feb 4 2014)</p>
+
+<h1>Step 1. Upgrade Your System to OS X Mavericks</h1>
+
+<p>If you have a not-so-ancient Mac model (generally, 2008 or newer), you should <a href="https://www.apple.com/osx/how-to-upgrade/">upgrade your system to OS X Mavericks</a>. It comes with the latest application features, energy efficiency and performance optimization from Apple, and it&rsquo;s completely free. Do this first before the rest of the steps in this guide.</p>
+
+<h1>Step 2. Install XCode Command Line Developer Tools</h1>
+
+<p>This used to involve a much lengthy process, but thanks to a newly released package by Apple, all you have to do is to run the following command in your terminal.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>xcode-select --install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Step 3. Install Homebrew</h1>
+
+<p>Type the following command in your terminal:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Step 4. Install Ruby with rbenv</h1>
+
+<p>Your Mac already ships with Ruby (that&rsquo;s how we can use it to install homebew in the last step). However, it&rsquo;s still a good idea to use a Ruby Version Manager like <code>rbenv</code> to install Ruby because 1) the system Ruby is likely outdated and 2) you may need to work on multiple projects on different versions of Ruby. A Ruby Version Manager makes organizing and switching between Rubies a breeze.</p>
+
+<p>First we can use homebrew to install rbenv:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>brew update
+</span><span class='line'>brew install rbenv ruby-build rbenv-gem-rehash
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>rbenv</code> by itself only manages switching ruby versions. <code>ruby-build</code> and <code>rbenv-gem-rehash</code> are both <code>rbenv</code> extensions. <code>ruby-build</code> allows you to install rubies with <code>rbenv</code> and <code>rbenv-gem-rehash</code> automatically installs new shims for you whenever a new Ruby gem is installed so you don&rsquo;t have to rehash yourself.</p>
+
+<p>Open up your the `~/.bashrc&#8217; file, and put this line on the bottom:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">eval</span> <span class="s2">&quot;$(rbenv init -)&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you are ready to install Ruby with <code>rbenv</code>. At the time of this writing, the latest stable Ruby version is 2.1.0, so let&rsquo;s install that.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rbenv install 2.1.0-p0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Step 5. Install git and set up Github account</h1>
+
+<p>Git is a powerful version control system and is very popular in the Ruby community. If you followed this guide, you should already have git installed as part of the XCode Command Line Developer Tools. You may also want to install git separately with homebrew to make it easier to upgrade to latest releases.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>brew install git
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now tell git your name and email that it will use for your future commits.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --global user.name <span class="s2">&quot;Your Name Here&quot;</span>
+</span><span class='line'>git config --global user.email <span class="s2">&quot;your_email@example.com&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Github is the leading platform for source code hosting and collaboration. If you don&rsquo;t have an account yet, go ahead and sign up for one at <a href="https://github.com.">https://github.com.</a> Make sure you sign up with the same email address from the step above.</p>
+
+<p>For easier authentication with Github when you push or pull code, follow <a href="https://help.github.com/articles/generating-ssh-keys">this guide</a> to set up ssh keys for your Mac.</p>
+
+<h1>Step 6. Set up Sublime Text 2 as code editor</h1>
+
+<p>If you already have an editor of choice, such as Vim or Emacs, you are all set and can skip this step! If you are not familiar with code editors, Sublime Text 2 is an excellent choice and you can download it <a href="http://www.sublimetext.com/2">here</a>.</p>
+
+<p>After you install it, run the following command so you can easily launch the editor from your terminal directly:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ln -s <span class="s2">&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot;</span> ~/bin/subl
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The convention for Ruby programs is to use two spaces as indentation, so follow <code>Sublime Text 2 =&gt; Preferences =&gt; Settings - User</code> and add these lines.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">{</span>
+</span><span class='line'><span class="s2">&quot;tab_size&quot;</span>: 2,
+</span><span class='line'><span class="s2">&quot;translate_tabs_to_spaces&quot;</span>: <span class="nb">true</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Step 7. Create a New Rails Application</h1>
+
+<p>If you don&rsquo;t have a directory to hold all your development projects yet, you can create that directory like below:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir ~/projects
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you can create a Rails project in that directory:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/projects
+</span><span class='line'>gem install rails
+</span><span class='line'>rails new name_of_your_new_app
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Wait until the the last step finishes, and you just created your first Rails project! You can verify that you set up Rails by first starting the server</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/projects/name_of_your_new_app
+</span><span class='line'>rails s
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now open up your browser and type in the address bar <code>http://localhost:3000</code> and if you see a welcome page, your app is running locally.</p>
+
+<h1>Optional Step 1. Use iTerm 2, zsh and oh-my-zsh to set up an awesome looking and easily customizable terminal</h1>
+
+<p>Download and Install <a href="http://www.iterm2.com/#/section/home">iTerm 2</a>. It comes with more features and easier to customize than the built in Terminal.</p>
+
+<p>Optionally, you can further customize iTerm 2 to your liking! Here are some of my preferences.</p>
+
+<ul>
+<li>Under &ldquo;Genereal&rdquo;, check &ldquo;Copy to clipboard on selection&rdquo;.</li>
+<li>Under &ldquo;Profile&rdquo; => &ldquo;Colors&rdquo;, click on &ldquo;Load Presets&rdquo;, then choose &ldquo;Dark Background&rdquo;;</li>
+<li>Under &ldquo;Profile&rdquo; => &ldquo;Text&rdquo;, change the font to one that you enjoy looking at. My favorite is 20pt <a href="http://www.marksimonson.com/fonts/view/anonymous-pro">Anonymous Pro</a> with Anti-aliased. You have to download it first and install it into your Mac&rsquo;s font book before you can use it.</li>
+<li>Under &ldquo;Keys&rdquo;, define a hotkey to hide/show the terminal window. This is much faster than having to Command+Tab through opened windows and find iTerm 2.</li>
+</ul>
+
+
+<p>Zsh is an alternative shell to the default bash shell that comes with Mac. It adds nice features such as smart tab completions, but what really sets it apart is its scriptability. Together with oh-my-zsh, an open source zsh configuration management framework, it becomes really easy to customize both the look and functionality of your terminal.</p>
+
+<p>Your Mac should already come with zsh. To use zsh, go to iTerm 2 => Preferences => Profiles => General and in the &ldquo;Command&rdquo; section, select &ldquo;Command&rdquo;, and type <code>/bin/zsh</code> in the box after it.</p>
+
+<p>Now you can install oh-my-zsh with</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you can customize the <code>~/.zshrc</code> file.</p>
+
+<ul>
+<li>If you have your settings in <code>~/.bash_profile</code>, you may want to copy them over to <code>/.zshrc</code>.</li>
+<li>Find the <code>plugins=(git)</code> line and add <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins">more plugins</a>. Here is the plugins I am using:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">plugins</span><span class="o">=(</span>git bundler brew osx vagrant wd gem<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The bunlder plugin is especially useful when you work on Rails applications as it saves you from typing those &ldquo;bundle exec&rdquo;&rsquo;s in front of commands like <code>rails</code>, <code>rake</code>, <code>rspec</code>, etc!</p>
+
+<p>If you do not like the default theme, you can pick from one of the many themes that come with oh-my-zsh. You can see the list of themes <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">here</a> and <a href="http://zshthem.es/all/">here</a>.</p>
+
+<p>If you feel really adventurous, you can even build your own theme! Take a look at <a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/themes">how themes are implemented</a>, and copy/tweak/build one exactly to your taste!</p>
+
+<h1>Optional step 2. Install Postgresql as a production quality database</h1>
+
+<p>By default, Rails uses sqlite3 as the default development database. It&rsquo;s a nice database but probably not one that you want to use in production. Postgresql is a solid, production quality relational database and works well with Rails. It&rsquo;s generally a good idea to set up your local database to match the database on the production environment.</p>
+
+<p>The easiest way to use Postgresql on Mac is to download and install the <a href="http://postgresapp.com/">Postgres.app</a></p>
+
+<p>With Postgresql running, add <code>gem 'pg'</code> to the Gemfile in your rails project and run <code>bundle install</code> to install the Postgresql Ruby driver.</p>
+
+		
+		
+	</div>
+
+</article>
 
 <nav id="pagenavi">
     

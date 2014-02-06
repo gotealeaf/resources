@@ -1,32 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://gotealeaf.github.io/resources/blog/2014/02/06/install-ruby-on-rails-for-hackers/
+        </loc>
+        <lastmod>2014-02-06T10:18:22-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://gotealeaf.github.io/resources/archives/</loc>
-        <lastmod>2014-02-06T01:54:03-05:00</lastmod>
+        <lastmod>2014-02-06T10:18:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://gotealeaf.github.io/resources/blog/archives/</loc>
-        <lastmod>2014-02-06T01:54:03-05:00</lastmod>
+        <lastmod>2014-02-06T10:18:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://gotealeaf.github.io/resources/blog/</loc>
-        <lastmod>2014-02-06T01:54:03-05:00</lastmod>
+        <lastmod>2014-02-06T10:18:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://gotealeaf.github.io/resources/guides/</loc>
-        <lastmod>2014-02-06T02:20:59-05:00</lastmod>
-    </url>
-    <url>
-        <loc>http://gotealeaf.github.io/resources/guides/ruby-on-rails-setup/</loc>
-        <lastmod>2014-02-06T02:00:23-05:00</lastmod>
-    </url>
-    <url>
-        <loc>http://gotealeaf.github.io/resources/guides/ruby-on-rails-setup.html</loc>
-        <lastmod>2014-02-06T02:20:42-05:00</lastmod>
+        <lastmod>2014-02-06T10:18:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://gotealeaf.github.io/resources/</loc>
-        <lastmod>2014-02-06T01:54:03-05:00</lastmod>
+        <lastmod>2014-02-06T10:18:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://gotealeaf.github.io/resources/robots.txt</loc>
