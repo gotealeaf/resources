@@ -1,10 +1,9 @@
 ---
-layout: page
-title: "ruby-on-rails-setup"
-date: 2014-02-06 01:59
+layout: post
+title: "Install Ruby on Rails for Hackers"
+date: 2014-02-06 10:17:11 -0500
 comments: true
-sharing: true
-footer: true
+categories:
 ---
 
 (Updated Feb 4 2014)
