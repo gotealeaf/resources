@@ -1,0 +1,8 @@
+---
+layout: default
+title: Archives
+---
+
+{% for post in site.guides reverse %}
+	{% include archive_post.html %}
+{% endfor %}
